@@ -5,13 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-
 @Controller
 public class HomeController {
 
     @RequestMapping("/")
     public String home() {
-        return ("index.jsp");
+        return ("index");
     }
 
     @RequestMapping("/add")
@@ -20,7 +19,7 @@ public class HomeController {
         int num3 = i + j;
 
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("result.jsp");
+        mv.setViewName("result");
         mv.addObject("num3", num3);
 
         return mv;
