@@ -6,9 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="add">
-        Enter 1st number: <input type="text" name="num1"><br>
-        Enter 2st number: <input type="text" name ="num2"><br>
+    <form action="addAlien" method="post">
+        Enter Alien id: <input type="text" name="id"><br>
+        Enter Alien name: <input type="text" name ="name"><br>
         <input type="submit">
     </form>
 </body>
