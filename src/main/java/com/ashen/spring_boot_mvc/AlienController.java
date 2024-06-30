@@ -17,7 +17,7 @@ public class AlienController {
     @Autowired
     AlienRepo repo;
 
-    @GetMapping("aliens")
+    @GetMapping(path = "aliens", produces = { "application/xml" })
     @ResponseBody
     public String getAliens() {
         List<Alien> aliens = repo.findAll();
@@ -34,7 +34,7 @@ public class AlienController {
     }
 
     @PostMapping("alien")
-    public Alien addAlien(Alien alien) {
+    public Alien addAlien(@RequestBody Alien alien) {
         repo.save(alien);
 
         return alien;
