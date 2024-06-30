@@ -3,6 +3,7 @@ package com.ashen.spring_boot_mvc;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,6 +17,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
+
+    @Autowired
+    AlienRepo repo;
 
     @RequestMapping("/")
     public String home() {
@@ -35,18 +39,16 @@ public class HomeController {
     }
 
     @PostMapping("addAlien")
-    public String addAlien(@ModelAttribute Alien a, Model m) {
+    public String addAlien(@ModelAttribute Alien a) {
 
-        m.addAttribute("alien", a);
-
+        repo.save(a);
         return "result";
     }
 
-    @GetMapping("/getALien")
-    public String getAlien(Model m) {
+    @GetMapping("getAlien")
+    public String getAlien(@RequestParam int id, Model m) {
 
-        List<Alien> aliens = Arrays.asList(new Alien(200, "isuru"), new Alien(201, "malidu"));
-        m.addAttribute("result", aliens);
+        m.addAttribute("result", repo.findById(id));
         return "showAlien";
     }
 

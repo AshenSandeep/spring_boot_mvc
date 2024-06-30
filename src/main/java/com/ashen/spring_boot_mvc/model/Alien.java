@@ -1,9 +1,11 @@
 package com.ashen.spring_boot_mvc.model;
 
-import org.springframework.stereotype.Component;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
-@Component
+@Entity
 public class Alien {
+    @Id
     private int id;
     private String name;
 
