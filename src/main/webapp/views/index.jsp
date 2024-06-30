@@ -16,5 +16,10 @@
         Enter the Alien id: <input type="text" name="id"><br>
         <input type="submit">
     </form>
+    <hr>
+    <form action="getAlienByName" method="get">
+        Enter the Alien Name: <input type="text" name="name"><br>
+        <input type="submit">
+    </form>
 </body>
 </html>

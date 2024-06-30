@@ -1,8 +1,5 @@
 package com.ashen.spring_boot_mvc;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,4 +49,10 @@ public class HomeController {
         return "showAlien";
     }
 
+    @GetMapping("getAlienByName")
+    public String getAlienByName(@RequestParam String name, Model m) {
+
+        m.addAttribute("result", repo.findByName(name));
+        return "showAlien";
+    }
 }
