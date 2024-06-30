@@ -21,5 +21,10 @@
         Enter the Alien Name: <input type="text" name="name"><br>
         <input type="submit">
     </form>
+    <hr>
+    <form action="getAlienNameByOrder" method="get">
+        Enter the Alien Name to get order: <input type="text" name="name"><br>
+        <input type="submit">
+    </form>
 </body>
 </html>

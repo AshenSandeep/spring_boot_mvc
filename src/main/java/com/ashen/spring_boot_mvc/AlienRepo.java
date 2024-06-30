@@ -10,4 +10,6 @@ public interface AlienRepo extends JpaRepository<Alien, Integer> {
     // customized methods should naming rules below
     // 1. 'findBy' + variable name
     // 2. varibale name first letter should be capital letter
+
+    List<Alien> findByNameOrderByName(String name);
 }

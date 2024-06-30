@@ -55,4 +55,11 @@ public class HomeController {
         m.addAttribute("result", repo.findByName(name));
         return "showAlien";
     }
+
+    @GetMapping("getAlienNameByOrder")
+    public String getAlienNameByOrder(@RequestParam String name, Model m) {
+
+        m.addAttribute("result", repo.findByNameOrderByName(name));
+        return "showAlien";
+    }
 }
